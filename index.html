@@ -1,0 +1,83 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#2c3e50" />
+    <title>Gastos Mensuales</title>
+    <link rel="manifest" href="manifest.json" />
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+  <body>
+    <h1>Gastos Mensuales</h1>
+
+    <h3 class="saldo">Saldo Actual: <span id="saldo-actual">0.00</span></h3>
+    <div id="botonera">
+      <button id="agregar-gasto"><i class="fa fa-plus"></i>Agregar</button>
+      <button id="cambiar-saldo"><i class="fa fa-dollar"></i>Cambiar</button>
+      <button id="reiniciar-gastos">
+        <i class="fa fa-refresh"></i>Reiniciar
+      </button>
+    </div>
+    <div id="lista-gastos"></div>
+    <h3 class="saldo">
+      Saldo Disponible: <span id="saldo-disponible">0.00</span>
+    </h3>
+
+    <div id="modal-gasto">
+      <div class="modal-contenido">
+        <div class="modal-cabecera">
+          <span>Agregar Gasto</span>
+          <span id="cerrar-gasto" class="fa fa-times"></span>
+        </div>
+        <form id="form-gasto">
+          <input type="hidden" id="gasto-id" />
+          <label for="gasto-nombre">Descripción</label>
+          <input type="text" id="gasto-nombre" autocomplete="off" />
+          <label for="gasto-monto">Monto</label>
+          <input type="number" id="gasto-monto" min="1" autocomplete="off" />
+          <label for="gasto-cubierto">
+            <input type="checkbox" id="gasto-cubierto" />Cubierto
+          </label>
+          <label for="gasto-recurrente">
+            <input type="checkbox" id="gasto-recurrente" />Recurrente
+          </label>
+        </form>
+        <button id="guardar-gasto" class="boton-guardar">
+          <i class="fa fa-save"></i>Guardar
+        </button>
+      </div>
+    </div>
+
+    <div id="modal-saldo">
+      <div class="modal-contenido">
+        <div class="modal-cabecera">
+          <span>Agregar Saldo</span>
+          <span id="cerrar-saldo" class="fa fa-times"></span>
+        </div>
+        <form id="form-saldo">
+          <label for="saldo-monto">Monto</label>
+          <input type="number" id="saldo-monto" min="1" autocomplete="off" />
+        </form>
+        <div>
+          <button id="agregar-saldo" class="boton-guardar">
+            <i class="fa fa-plus"></i>Agregar
+          </button>
+          <button id="actualizar-saldo" class="boton-guardar">
+            <i class="fa fa-save"></i>Actualizar
+          </button>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+
+    <script>
+      if ("serviceWorker" in navigator) {
+        navigator.serviceWorker.register("service-worker.js");
+      }
+    </script>
+  </body>
+</html>
