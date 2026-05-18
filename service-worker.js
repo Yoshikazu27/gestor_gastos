@@ -1,13 +1,13 @@
 const CACHE_NAME = "gastos-app-v1";
 
 const urlsToCache = [
-  "./",
-  "./index.html",
-  "./script.js",
-  "./styles.css",
-  "./manifest.json",
-  "./icon-192.png",
-  "./icon-512.png"
+  "/gestor_gastos/",
+  "/gestor_gastos/index.html",
+  "/gestor_gastos/script.js",
+  "/gestor_gastos/styles.css",
+  "/gestor_gastos/manifest.json",
+  "/gestor_gastos/icon-192.png",
+  "/gestor_gastos/icon-512.png"
 ];
 
 self.addEventListener("install", event => {
