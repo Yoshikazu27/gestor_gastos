@@ -225,6 +225,7 @@
     contenidoAgregarGasto.addEventListener('animationend', () => {
         if (modalAgregarGasto.classList.contains('close')) {
             modalAgregarGasto.classList.remove('open', 'close');
+            formGasto['gasto-id'].value = '';
             formGasto.reset();
         }
     });
