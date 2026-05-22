@@ -196,7 +196,7 @@
         }
 
         gastos.splice(0, gastos.length,
-            ...gastos.filter(e => id ? e.id !== id : gastos.recurrente));
+            ...gastos.filter(e => id ? e.id !== id : e.recurrente));
         guardarDatos();
         inicializar();
     }
